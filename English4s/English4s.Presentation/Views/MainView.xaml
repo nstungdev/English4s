@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Title="English4s" Height="450" Width="800">
-    <DockPanel LastChildFill="False">
+    <DockPanel>
         <Menu DockPanel.Dock="Top" Background="#D6DAC8" md:MenuAssist.TopLevelMenuItemHeight="30">
             <md:PackIcon Kind="Apple" />
             <MenuItem Header="_Dashboard" Command="{Binding NavigateCommand}" CommandParameter="{x:Type viewmodels:DashBoardViewModel}"></MenuItem>
@@ -24,6 +24,18 @@
             <MenuItem Header="_Setting"></MenuItem>
             <MenuItem Header="_Help"></MenuItem>
         </Menu>
-        <ContentControl Margin="10" Content="{Binding CurrentView}" />
+
+        <Grid>
+            <Grid x:Name="overlay" Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" Panel.ZIndex="999" Background="LightGray" Opacity="0.6">
+                <ProgressBar IsIndeterminate="True" Width="50" Height="50" Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" />
+            </Grid>
+
+            <Grid Width="450" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
+                <md:Snackbar Background="#41B06E" FontWeight="SemiBold" MessageQueue="{Binding InfoSnackBarQueue}" HorizontalAlignment="Stretch"></md:Snackbar>
+                <md:Snackbar Background="#BF3131" FontWeight="SemiBold" MessageQueue="{Binding ErrorSnackBarQueue}" HorizontalAlignment="Stretch"></md:Snackbar>
+            </Grid>
+
+            <ContentControl Margin="10" Content="{Binding CurrentView}" />
+        </Grid>
     </DockPanel>
 </Window>
