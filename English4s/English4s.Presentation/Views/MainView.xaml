@@ -1,27 +1,27 @@
-﻿<Window x:Class="English4s.MainApp.MainWindow"
+﻿<Window x:Class="English4s.Presentation.Views.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:English4s.Presentation.Views"
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:English4s.MainApp"
-        Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
+        Style="{StaticResource MaterialDesignWindow}"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         Title="English4s" Height="450" Width="800">
     <DockPanel LastChildFill="False">
         <Menu DockPanel.Dock="Top" Background="#D6DAC8" md:MenuAssist.TopLevelMenuItemHeight="30">
             <md:PackIcon Kind="Apple" />
-            
             <MenuItem Header="_Dashboard"></MenuItem>
-
             <MenuItem Header="_Management">
                 <MenuItem Header="Vocabularies" />
                 <MenuItem Header="Conversation" />
                 <MenuItem Header="Practices" />
             </MenuItem>
-
             <MenuItem Header="_Setting"></MenuItem>
             <MenuItem Header="_Help"></MenuItem>
         </Menu>
+        <ContentControl x:Name="MainContent" />
     </DockPanel>
 </Window>

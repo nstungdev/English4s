@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:view="clr-namespace:English4s.Presentation.Views"
+                    xmlns:viewModel="clr-namespace:English4s.Presentation.ViewModels">
+    <DataTemplate DataType="{x:Type viewModel:DashBoardViewModel}">
+        <view:DashBoardView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:SettingViewModel}">
+        <view:DashBoardView />
+    </DataTemplate>
+</ResourceDictionary>
