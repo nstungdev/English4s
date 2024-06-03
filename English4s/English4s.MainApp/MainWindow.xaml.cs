@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace English4s.Application
+namespace English4s.MainApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

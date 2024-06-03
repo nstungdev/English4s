@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace English4s.Application
+namespace English4s.MainApp
 {
     /// <summary>
     /// Interaction logic for App.xaml
