@@ -1,10 +1,9 @@
-﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using English4s.Presentation.ViewModels;
 using English4s.Presentation.Views;
-using English4s.Presentation.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Windows;
+using English4s.Presentation;
 
 namespace English4s.MainApp
 {
@@ -20,12 +19,7 @@ namespace English4s.MainApp
             Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddSingleton<MainView>(provider => new MainView
-                    {
-                        DataContext = provider.GetRequiredService<MainViewModel>()
-                    });
-                    services.AddSingleton<MainViewModel>();
-
+                    services.AddPresentationServices();
 
                     _serviceProvider = services.BuildServiceProvider();
                 }).Build();
